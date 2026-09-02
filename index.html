@@ -1,0 +1,1063 @@
+<!doctype html><meta charset='utf-8'><title>Voltra — Documentation</title><meta name='viewport' content='width=device-width,initial-scale=1'><style>
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;
+ color:#1F2937;background:#fff;display:flex}
+nav{width:270px;flex:none;position:sticky;top:0;height:100vh;overflow-y:auto;
+ background:#0F172A;padding:22px 0}
+nav b{display:block;color:#fff;font-size:17px;padding:0 20px 14px;border-bottom:1px solid #1E293B;margin-bottom:10px}
+nav a{display:block;color:#94A3B8;text-decoration:none;padding:9px 20px;font-size:14px;border-left:3px solid transparent}
+nav a:hover{color:#fff;background:#1E293B}
+nav a.on{color:#fff;border-left-color:#2563EB;background:#1E293B}
+main{flex:1;min-width:0;max-width:880px;margin:0 auto;padding:40px 34px 100px}
+section{padding-bottom:34px;margin-bottom:34px;border-bottom:1px solid #E5E7EB}
+section:last-child{border:0}
+h1{font-size:32px;letter-spacing:-.02em;margin:.3em 0 .5em;scroll-margin-top:20px}
+h2{font-size:22px;margin:1.9em 0 .5em}
+h3{font-size:17px;margin:1.5em 0 .4em}
+p{margin:0 0 1em}
+img{max-width:100%;border:1px solid #E5E7EB;border-radius:9px;display:block;margin:16px 0;
+ box-shadow:0 2px 10px rgba(15,23,42,.07)}
+a{color:#2563EB}
+code{background:#F1F5F9;padding:2px 6px;border-radius:5px;font-size:13.5px;
+ font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#0F172A;color:#E2E8F0;padding:15px 17px;border-radius:9px;overflow:auto;font-size:13.5px}
+pre code{background:none;color:inherit;padding:0}
+blockquote{margin:1.2em 0;padding:13px 17px;border-left:4px solid #2563EB;background:#EFF6FF;
+ border-radius:0 8px 8px 0}
+table{width:100%;border-collapse:collapse;margin:1.1em 0;font-size:14.5px}
+th{background:#F8FAFC;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#475569}
+th,td{padding:9px 12px;border-bottom:1px solid #E5E7EB;vertical-align:top}
+hr{border:0;border-top:1px solid #E5E7EB;margin:2em 0}
+ul{padding-left:22px;margin:0 0 1em}
+li{margin:.3em 0}
+ul.check{list-style:none;padding-left:4px}
+ul.check li::before{content:"☐  ";color:#2563EB;font-weight:700}
+@media(max-width:900px){body{display:block}nav{width:auto;height:auto;position:static}main{padding:24px 18px 60px}}
+</style><nav><b>Voltra docs</b><a href="#README">Voltra — Documentation</a><a href="#01-installation">1 — Installation</a><a href="#02-admin-tour">2 — Admin tour</a><a href="#03-products">3 — Products</a><a href="#04-orders">4 — Orders &amp; tracking</a><a href="#05-vendors-payouts">5 — Vendors &amp; payouts</a><a href="#06-content">6 — Storefront content</a><a href="#07-coupons-shipping">7 — Coupons &amp; shipping</a><a href="#08-settings">8 — Settings</a><a href="#09-vendor-panel">9 — Vendor panel</a><a href="#10-seo">10 — SEO</a><a href="#11-backup">11 — Backup &amp; restore</a><a href="#12-troubleshooting">12 — Troubleshooting</a></nav><main><section id="README"><h1>Voltra — Documentation</h1>
+
+<p>Everything you need to run the marketplace day to day. Screenshots are taken</p>
+<p>from the actual running app, so what you see here is what you get.</p>
+
+<table>
+<tr><th>Guide</th><th>What it covers</th></tr>
+<tr><td><a href="#01-installation">01 — Installation</a></td><td>Requirements, upload, first login, going live</td></tr>
+<tr><td><a href="#02-admin-tour">02 — Admin tour</a></td><td>Dashboard, navigation, who can see what</td></tr>
+<tr><td><a href="#03-products">03 — Products</a></td><td>Adding products, variants, SKUs, images, deal timers</td></tr>
+<tr><td><a href="#04-orders">04 — Orders & tracking</a></td><td>Order flow, packages, shipment updates, refunds</td></tr>
+<tr><td><a href="#05-vendors-payouts">05 — Vendors & payouts</a></td><td>Approving sellers, commission, the ledger, paying out</td></tr>
+<tr><td><a href="#06-content">06 — Storefront content</a></td><td>Banners, categories, brands, menus, pages, blog</td></tr>
+<tr><td><a href="#07-coupons-shipping">07 — Coupons & shipping</a></td><td>Discount codes, shipping zones and rates</td></tr>
+<tr><td><a href="#08-settings">08 — Settings</a></td><td>Every settings tab explained</td></tr>
+<tr><td><a href="#09-vendor-panel">09 — Vendor panel</a></td><td>What your sellers see</td></tr>
+<tr><td><a href="#10-seo">10 — SEO</a></td><td>How SEO is generated, URLs, sitemap</td></tr>
+<tr><td><a href="#11-backup">11 — Backup & restore</a></td><td>Backups, restoring, what is protected</td></tr>
+<tr><td><a href="#12-troubleshooting">12 — Troubleshooting</a></td><td>Common problems and fixes</td></tr>
+</table>
+
+<h2>Quick reference</h2>
+
+<p><strong>Demo logins</strong> (password <code>password123</code>):</p>
+
+<table>
+<tr><th>Role</th><th>Email</th><th>Lands on</th></tr>
+<tr><td>Admin</td><td><code>admin@voltra.test</code></td><td><code>/admin/</code></td></tr>
+<tr><td>Vendor</td><td><code>nova@voltra.test</code></td><td><code>/vendor/</code></td></tr>
+<tr><td>Buyer</td><td><code>rahul@example.com</code></td><td><code>/account.php</code></td></tr>
+</table>
+
+<blockquote><strong>Before going live:</strong> turn off the one-click demo buttons in</blockquote>
+<blockquote><strong>Settings → Commerce → "Show one-click demo logins"</strong>, and change every</blockquote>
+<blockquote>demo password. They are convenience for evaluation, not for production.</blockquote>
+</section><section id="01-installation">
+<h1>1 — Installation</h1>
+
+<h2>Requirements</h2>
+
+<table>
+<tr><th>Need</th><th>Detail</th></tr>
+<tr><td>PHP</td><td>8.1 or newer</td></tr>
+<tr><td>Extensions</td><td><code>pdo_sqlite</code> (required), <code>curl</code> (payments/AI), <code>zip</code> (zip backups), <code>gd</code> (optional)</td></tr>
+<tr><td>Server</td><td>Apache/LiteSpeed with <code>mod_rewrite</code>, or PHP's built-in server for testing</td></tr>
+<tr><td>Database</td><td>None to install — SQLite lives in <code>db/voltra.sqlite</code></td></tr>
+</table>
+
+<p>No Composer. No npm. No build step. There is nothing to compile.</p>
+
+<h2>Install</h2>
+
+<p>1. <strong>Unzip</strong> the archive and upload the contents to your web root</p>
+<p>   (<code>public_html</code>, <code>htdocs</code>, or similar).</p>
+<p>2. Make sure <code>uploads/</code> and <code>db/</code> are <strong>writable</strong> by PHP (usually <code>755</code>, some</p>
+<p>   hosts need <code>775</code>).</p>
+<p>3. Open your domain in a browser.</p>
+
+<p>That's it. A seeded demo database ships inside the zip, so the site works</p>
+<p>immediately — you do <strong>not</strong> need to run an installer.</p>
+
+<h3>Resetting to factory demo data</h3>
+
+<pre><code>
+php db/seed.php
+</code></pre>
+
+<p>This wipes and rebuilds the demo catalogue, vendors and orders. Only use it on</p>
+<p>a fresh install — it will destroy real data.</p>
+
+<h3>Running locally</h3>
+
+<pre><code>
+php -S 0.0.0.0:8080 router.php
+</code></pre>
+
+<p><code>router.php</code> emulates the <code>.htaccess</code> rewrites so pretty URLs work with PHP's</p>
+<p>built-in server.</p>
+
+<h2>First login</h2>
+
+<p><img src="img/login.jpg" alt="Login page" loading="lazy"></p>
+
+<p>1. <strong>Normal login</strong> — email and password.</p>
+<p>2. <strong>One-click demo buttons</strong> — Admin, Vendor and Buyer. These submit a normal</p>
+<p>   form post, so they go through the same CSRF and password checks as a typed</p>
+<p>   login. They work with JavaScript disabled.</p>
+
+<p>Log in as <strong>Admin</strong> to reach <code>/admin/</code>.</p>
+
+<h2>Going live — checklist</h2>
+
+<p>Work through this before you accept a real order:</p>
+
+<ul class="check">
+<li><strong>Settings → Commerce</strong> → turn <strong>off</strong> "Show one-click demo logins"</li>
+<li>Change the password on every demo account (<strong>Users</strong>)</li>
+<li>Delete or rename the demo accounts you do not need</li>
+<li><strong>Settings → Site identity</strong> → your name, logo, favicon</li>
+<li><strong>Settings → Payments</strong> → real Razorpay/PayPal keys, switch off sandbox</li>
+<li><strong>Settings → Email</strong> → your SMTP credentials, send a test</li>
+<li><strong>Settings → Commerce</strong> → currency, commission rate, minimum payout</li>
+<li>Replace the demo products, vendors and banners with your own</li>
+<li>Take a backup (<strong>Settings → Backup</strong>)</li>
+</ul>
+
+<h2>Security notes</h2>
+
+<p>These are already handled, but worth knowing:</p>
+
+<ul>
+<li><code>db/</code> is blocked at the web server (<code>.htaccess</code> + a deny rule). Requesting</li>
+<p>  <code>/db/voltra.sqlite</code> returns <strong>403</strong>.</p>
+<li>PHP execution is disabled inside <code>uploads/</code>, so an uploaded <code>.php</code> file</li>
+<p>  cannot run.</p>
+<li>Every form is CSRF-protected; AJAX sends an <code>X-CSRF-Token</code> header.</li>
+<li>Payment callbacks are verified server-side — a browser redirect is never</li>
+<p>  trusted on its own.</p>
+</ul>
+
+<hr>
+
+<p><a href="#02-admin-tour">Next: Admin tour →</a></p>
+</section><section id="02-admin-tour">
+<h1>2 — Admin tour</h1>
+
+<p><img src="img/dashboard.jpg" alt="Admin dashboard" loading="lazy"></p>
+
+<h2>The dashboard</h2>
+
+<p><strong>1 — KPI cards.</strong> Gross merchandise value (paid orders only), your commission</p>
+<p>earned, average order value, and payouts owed to sellers. Each has its own</p>
+<p>accent colour so you can find one at a glance.</p>
+
+<p><strong>2 — Needs your attention.</strong> A live to-do list. Anything above zero turns</p>
+<p><strong>amber</strong> and gets a button straight to the fix. Anything at zero says</p>
+<p>"All clear" and stays quiet — a zero here is good news, so it does not shout.</p>
+
+<p><strong>3 — Sidebar.</strong> Every section of the panel. Items you lack permission for are</p>
+<p>hidden entirely, not greyed out.</p>
+
+<p>Below the fold: a 14-day sales chart, recent orders, top sellers by package</p>
+<p>count, and low-stock alerts.</p>
+
+<h2>Reading the colour language</h2>
+
+<p>The panel uses one rule consistently:</p>
+
+<blockquote><strong>Soft tinted background = information.</strong></blockquote>
+<blockquote><strong>Solid saturated fill = the thing you click.</strong></blockquote>
+
+<p>So a *Pending* pill is a tinted amber chip (it tells you something), while</p>
+<p><strong>Mark paid</strong> is a solid blue button (it does something). Destructive actions</p>
+<p>stay tinted red until you hover, then commit to full red.</p>
+
+<h2>Notifications</h2>
+
+<p>The bell in the top bar shows unread count. Opening a notification marks just</p>
+<p>that one as read and the badge drops by one — there is also <strong>Mark all read</strong>.</p>
+
+<h2>Who can see what</h2>
+
+<p>Capabilities are enforced server-side on every page and every AJAX call, not</p>
+<p>just hidden in the UI.</p>
+
+<table>
+<tr><th>Role</th><th>Can reach</th></tr>
+<tr><td><code>super_admin</code></td><td>Everything</td></tr>
+<tr><td><code>admin</code></td><td>Everything except user role changes</td></tr>
+<tr><td><code>support</code></td><td>Orders, returns, moderation — <strong>not</strong> payouts or settings</td></tr>
+<tr><td><code>vendor_owner</code></td><td>Only <code>/vendor/</code>, scoped to their own store</td></tr>
+<tr><td><code>customer</code></td><td>Storefront and their own account</td></tr>
+</table>
+
+<p>A vendor who requests another vendor's order gets a <strong>403</strong>, not an empty page.</p>
+
+<h2>Moderation queue</h2>
+
+<p><img src="img/moderation.jpg" alt="Moderation" loading="lazy"></p>
+
+<p>Products, reviews and questions awaiting approval, in one place. Approve or</p>
+<p>reject in a click. If a vendor has <strong>auto-approve</strong> on, their products skip</p>
+<p>this entirely.</p>
+
+<h2>Users and roles</h2>
+
+<p><img src="img/users.jpg" alt="Users" loading="lazy"></p>
+
+<p>Every account with its role. Change a role here — capability checks apply</p>
+<p>immediately on the next request, server-side.</p>
+
+<h2>Analytics</h2>
+
+<p><img src="img/analytics.jpg" alt="Analytics" loading="lazy"></p>
+
+<p>Product views, add-to-carts, purchases and <strong>zero-result searches</strong>. That last</p>
+<p>one is the most useful: it tells you what buyers wanted and you did not stock.</p>
+
+<h2>Sections at a glance</h2>
+
+<table>
+<tr><th>Section</th><th>Use it for</th></tr>
+<tr><td>Products</td><td>Catalogue, variants, stock</td></tr>
+<tr><td>Orders</td><td>Every order, package-level fulfilment</td></tr>
+<tr><td>Vendors</td><td>Seller applications, KYC, commission overrides</td></tr>
+<tr><td>Payouts</td><td>Paying sellers what they have earned</td></tr>
+<tr><td>Returns</td><td>RMA requests</td></tr>
+<tr><td>Moderation</td><td>Products, reviews and questions awaiting approval</td></tr>
+<tr><td>Categories / Brands / Attributes</td><td>Catalogue structure and filter facets</td></tr>
+<tr><td>Posts / Pages</td><td>Blog and static pages</td></tr>
+<tr><td>Media</td><td>Every uploaded file</td></tr>
+<tr><td>Menus / Widgets / Shortcodes</td><td>Storefront layout</td></tr>
+<tr><td>Banner slider</td><td>Homepage carousel</td></tr>
+<tr><td>Coupons</td><td>Discount codes</td></tr>
+<tr><td>Ads & Sponsored</td><td>Banner ads and paid listing placements</td></tr>
+<tr><td>Shipping</td><td>Zones and rates</td></tr>
+<tr><td>Analytics</td><td>Views, add-to-carts, purchases, zero-result searches</td></tr>
+<tr><td>Users</td><td>Accounts and roles</td></tr>
+<tr><td>Settings</td><td>Everything else</td></tr>
+</table>
+
+<hr>
+
+</section><section id="03-products">
+<h1>3 — Products</h1>
+
+<h2>The product list</h2>
+
+<p><img src="img/products.jpg" alt="Products list" loading="lazy"></p>
+
+<p><strong>1 — Add product.</strong> Opens an empty editor.</p>
+<p><strong>2 — Column headers.</strong> Click to sort.</p>
+<p><strong>3 — Bulk bar.</strong> Tick rows and it appears — publish, unpublish or delete in</p>
+<p>one go.</p>
+
+<p>Each row shows the thumbnail, title, seller, price, stock and status. <strong>View</strong></p>
+<p>opens the live product page in a new tab.</p>
+
+<h2>Adding a product</h2>
+
+<p><img src="img/product-edit-1.jpg" alt="Product editor — main fields" loading="lazy"></p>
+
+<p><strong>1 — Product title.</strong> The URL slug fills itself from the title. You can edit</p>
+<p>it, but changing it on a live product changes its URL — old links will 404, so</p>
+<p>only do it before publishing.</p>
+
+<p><strong>2 — Description toolbar.</strong> Bold, italic, headings, lists, quotes, links,</p>
+<p>images, and the <strong>AI writer</strong>.</p>
+
+<p><strong>3 — Visual / HTML toggle.</strong> Switch between the rich editor and raw HTML.</p>
+<p>Content is copied across on every switch, so the two can never drift apart. In</p>
+<p>HTML mode the formatting buttons are disabled — they do nothing useful on a</p>
+<p>textarea.</p>
+
+<blockquote><strong>There is no SEO fieldset.</strong> The meta title, description, Open Graph tags</blockquote>
+<blockquote>and structured data are all generated from the title, short description and</blockquote>
+<blockquote>body. See <a href="#10-seo">SEO</a>.</blockquote>
+
+<h3>Short description</h3>
+
+<p>Used for the meta description <strong>and</strong> the product card excerpt. Keep it under</p>
+<p>about 160 characters. If you leave it blank, the system falls back to the first</p>
+<p>part of the body.</p>
+
+<h2>Variants, pricing and stock</h2>
+
+<p><img src="img/product-edit-2.jpg" alt="Variants and SKUs" loading="lazy"></p>
+
+<p><strong>1 — Variant rows.</strong> Every purchasable option is a row: title, SKU, price,</p>
+<p>MRP, stock, weight. A product with no options just keeps one row called</p>
+<p>"Default".</p>
+
+<p><strong>2 — Auto-SKU.</strong> Generates SKUs from the product and variant names</p>
+<p>(<code>APPL-11</code>, <code>APPL-12</code>…). Duplicates are flagged <strong>red as you type</strong>, and the</p>
+<p>server de-duplicates case-insensitively on save — it adds a suffix rather than</p>
+<p>refusing the save.</p>
+
+<p>Other buttons:</p>
+
+<table>
+<tr><th>Button</th><th>Does</th></tr>
+<tr><td><strong>+ Add variant</strong></td><td>New empty row</td></tr>
+<tr><td><strong>Bulk-fill price</strong></td><td>Same price into every row</td></tr>
+<tr><td><strong>Bulk-fill stock</strong></td><td>Same stock into every row</td></tr>
+<tr><td><strong>Regenerate all SKUs</strong></td><td>Overwrites every SKU, even filled ones</td></tr>
+</table>
+
+<p><strong>MRP</strong> is the struck-through "was" price. Set it higher than price and the</p>
+<p>card automatically shows a discount badge. Leave it equal (or empty) for no</p>
+<p>badge.</p>
+
+<p><strong>Stock</strong> drives the storefront: <code>0</code> shows *Out of stock* and disables the</p>
+<p>buy button; <code>1–3</code> shows *Only N left*. Anything higher shows nothing at all —</p>
+<p>a green "In stock" on every card is noise.</p>
+
+<h2>Images, publishing and deal timers</h2>
+
+<p><img src="img/product-edit-3.jpg" alt="Sidebar: publish, images, shipping" loading="lazy"></p>
+
+<p><strong>Featured image</strong> is the card thumbnail and the social share image.</p>
+<p><strong>Gallery</strong> images appear as thumbnails on the product page. Use **Choose</p>
+<p>image** to pick from the media library or upload on the spot.</p>
+
+<p><strong>Status</strong> — Draft, Pending or Published. <strong>Schedule publish at</strong> sets a future</p>
+<p>go-live date.</p>
+
+<p><strong>Deal ends</strong> is the countdown. Set a date and time and the product page shows</p>
+<p>a live timer (days/hours/minutes/seconds) that removes itself when the offer</p>
+<p>expires. Leave it blank for no timer.</p>
+
+<p><strong>Shipping & returns</strong> — shipping class, handling days, return window, and a</p>
+<p>free-shipping flag for this product.</p>
+
+<h2>Specifications</h2>
+
+<p>Driven by the <strong>Attributes</strong> builder. Whatever you define there appears here as</p>
+<p>fields, and those values become filter facets on the shop page, rows in the</p>
+<p>spec table, and structured data for search engines.</p>
+
+<h2>Moderation</h2>
+
+<p>If a vendor submits a product, it lands in <strong>Moderation</strong> as *Pending*. Approve</p>
+<p>or reject it there. You can let a trusted vendor skip this — see</p>
+<p><a href="#05-vendors-payouts">Vendors</a>.</p>
+
+<hr>
+
+</section><section id="04-orders">
+<h1>4 — Orders & tracking</h1>
+
+<h2>How an order is structured</h2>
+
+<p>This is the one concept worth understanding before anything else:</p>
+
+<blockquote>One cart → one payment → <strong>one order</strong> → <strong>one package per seller</strong>.</blockquote>
+
+<p>If a buyer orders from three vendors, they pay once and get <strong>one order</strong> with</p>
+<p><strong>three packages</strong>. Each package ships separately, has its own delivery</p>
+<p>estimate, its own fulfilment status, and its own commission line. Package</p>
+<p>subtotals always add up to what the buyer was charged.</p>
+
+<h2>The orders list</h2>
+
+<p><img src="img/orders.jpg" alt="Orders list" loading="lazy"></p>
+
+<p><strong>1 — Order rows.</strong> Code, date, buyer, which sellers are involved, total,</p>
+<p>payment status and method.</p>
+
+<p><strong>2 — Open.</strong> The order detail page. <strong>Invoice</strong> produces a printable invoice.</p>
+<p><strong>Mark paid</strong> appears only on unpaid orders — that is the solid blue button,</p>
+<p>because it is the action.</p>
+
+<p>Filter by payment status or search by order code, buyer name or email.</p>
+<p><strong>Export CSV</strong> gives you the filtered set.</p>
+
+<h2>Order detail and shipment updates</h2>
+
+<p><img src="img/order-detail.jpg" alt="Order detail with tracking" loading="lazy"></p>
+
+<p>The top of the page shows totals, the buyer's address, and order-level actions.</p>
+<p>Below that, <strong>one block per package</strong>.</p>
+
+<p><strong>1 — Update status.</strong> Everything about a shipment in one form:</p>
+
+<table>
+<tr><th>Field</th><th>Notes</th></tr>
+<tr><td><strong>Status</strong></td><td>Confirmed → Packed → Shipped → Delivered (or Cancelled)</td></tr>
+<tr><td><strong>Carrier</strong></td><td>Only shown once you pick Shipped</td></tr>
+<tr><td><strong>Tracking no.</strong></td><td>Same</td></tr>
+<tr><td><strong>Location</strong></td><td>Optional, e.g. "Bhiwandi hub"</td></tr>
+<tr><td><strong>Note to buyer</strong></td><td>Optional, visible to the customer</td></tr>
+</table>
+
+<p><strong>Save status</strong> applies the change. <strong>Add note only</strong> records an update</p>
+<p>*without* changing the status — useful for "Held at hub for address check".</p>
+
+<p><strong>2 — Tracking history.</strong> Every change and note, appended in order. This table</p>
+<p>is <strong>append-only</strong> — nothing is overwritten, so you always have the full audit</p>
+<p>trail. The buyer sees the same history in their account, minus staff names.</p>
+
+<h3>What each status does</h3>
+
+<table>
+<tr><th>Status</th><th>Effect</th></tr>
+<tr><td>Confirmed</td><td>Seller has accepted the order</td></tr>
+<tr><td>Packed</td><td>Ready to hand to the courier</td></tr>
+<tr><td><strong>Shipped</strong></td><td>Emails the buyer the carrier + tracking number</td></tr>
+<tr><td><strong>Delivered</strong></td><td>Starts the return window; releases the seller's earnings. For COD, credits the ledger</td></tr>
+<tr><td>Cancelled</td><td>Restocks the items</td></tr>
+</table>
+
+<p>Marking a package delivered twice does <strong>not</strong> pay the seller twice.</p>
+
+<h2>Refunds</h2>
+
+<p><strong>Refund line</strong> refunds a single item; <strong>Refund entire order</strong> does the lot.</p>
+<p>Either way the ledger reverses *both* the sale credit and the commission debit,</p>
+<p>so your books stay correct.</p>
+
+<h2>Returns</h2>
+
+<p><img src="img/returns.jpg" alt="Returns" loading="lazy"></p>
+
+<p>Buyers request a return from their account inside the return window. Requests</p>
+<p>appear here as *Requested* — approve, reject, or mark received. Approving links</p>
+<p>the refund back to the original order line.</p>
+
+<hr>
+
+</section><section id="05-vendors-payouts">
+<h1>5 — Vendors & payouts</h1>
+
+<h2>Approving sellers</h2>
+
+<p><img src="img/vendors.jpg" alt="Vendors" loading="lazy"></p>
+
+<p>Someone applies through <strong>Sell with us</strong> on the storefront and lands here as</p>
+<p>*Pending*. Open the application to review their business details, tax ID and</p>
+<p>payout method, then set <strong>KYC status</strong>:</p>
+
+<table>
+<tr><th>Status</th><th>Means</th></tr>
+<tr><td>Pending</td><td>Applied, cannot sell yet</td></tr>
+<tr><td><strong>Approved</strong></td><td>Can list products and receive orders</td></tr>
+<tr><td>Rejected</td><td>Application refused</td></tr>
+<tr><td>Suspended</td><td>Was approved, now blocked — their store 404s</td></tr>
+</table>
+
+<h3>Per-vendor settings</h3>
+
+<p><strong>Commission rate</strong> overrides the site default for this seller. Leave it blank</p>
+<p>to use the global rate.</p>
+
+<p><strong>Auto-approve</strong> lets a trusted seller publish without going through</p>
+<p>Moderation. Off by default.</p>
+
+<h2>How the money works</h2>
+
+<p>This is the part worth reading carefully.</p>
+
+<p><code>vendor_ledger</code> is an <strong>append-only</strong> table of signed rows:</p>
+
+<table>
+<tr><th>Type</th><th>Sign</th><th>When</th></tr>
+<tr><td><code>sale</code></td><td>+</td><td>Order paid</td></tr>
+<tr><td><code>commission</code></td><td>−</td><td>Order paid</td></tr>
+<tr><td><code>refund</code></td><td>−</td><td>Item refunded</td></tr>
+<tr><td><code>refund_commission</code></td><td>+</td><td>Item refunded (gives the commission back)</td></tr>
+<tr><td><code>payout</code></td><td>−</td><td>You pay the seller</td></tr>
+</table>
+
+<p>A seller's balance is <strong>always <code>SUM(ledger)</code></strong> — never a stored number that can</p>
+<p>drift out of sync. Rows are never edited or deleted; a correction is a new row.</p>
+
+<p>Each row is in one of two states:</p>
+
+<ul>
+<li><strong><code>pending</code></strong> — order paid but not yet delivered</li>
+<li><strong><code>available</code></strong> — delivered, ready to pay out</li>
+</ul>
+
+<p>Earnings move from pending to available when a package is marked <strong>Delivered</strong>.</p>
+<p>For COD orders that is also the moment the sale is credited at all.</p>
+
+<h2>Running a payout</h2>
+
+<p><img src="img/payouts.jpg" alt="Payouts" loading="lazy"></p>
+
+<p>The page lists each seller's available balance. Sellers below the **minimum</p>
+<p>payout** (Settings → Commerce) are not shown.</p>
+
+<p>1. Pick the seller and check the amount.</p>
+<p>2. Pay them through your bank/UPI <strong>outside the system</strong>.</p>
+<p>3. Record the payout here with the reference number.</p>
+
+<p>Recording it flips those ledger rows to <code>paid</code> and writes a balancing negative</p>
+<p>row, so the balance drops to zero and the history stays intact. Nothing is</p>
+<p>deleted.</p>
+
+<blockquote>Voltra does <strong>not</strong> move money by itself. It tells you exactly what to pay</blockquote>
+<blockquote>and keeps the record; the transfer is yours to make.</blockquote>
+
+<h2>Vendor earnings view</h2>
+
+<p>Sellers see the same numbers from their side — pending, available, paid to</p>
+<p>date, and every ledger line — in <strong>Vendor → Earnings</strong>. Because both sides read</p>
+<p>the same table, your figures and theirs can never disagree.</p>
+
+<hr>
+
+</section><section id="06-content">
+<h1>6 — Storefront content</h1>
+
+<h2>Banner slider</h2>
+
+<p><img src="img/banners.jpg" alt="Banner slider manager" loading="lazy"></p>
+
+<p>The rotating carousel at the top of the homepage. Images only — no text</p>
+<p>overlays, because overlaid text never survives the crop to a phone screen.</p>
+
+<p><strong>1 — Existing banners</strong> in display order, with a live/off pill.</p>
+<p><strong>2 — Image field.</strong> Pick from the media library or upload.</p>
+
+<table>
+<tr><th>Field</th><th>Notes</th></tr>
+<tr><td><strong>Title</strong></td><td>Internal only, never shown on the slide</td></tr>
+<tr><td><strong>Desktop image</strong></td><td><strong>1600×420</strong> recommended</td></tr>
+<tr><td><strong>Mobile image</strong></td><td><strong>800×500</strong> — upload one, or phones get a letterboxed crop</td></tr>
+<tr><td><strong>Link</strong></td><td>Where the slide goes, e.g. <code>shop.php?cat=smartphones</code></td></tr>
+<tr><td><strong>Sort order</strong></td><td>Lower shows first</td></tr>
+<tr><td><strong>Starts / Ends</strong></td><td>Optional schedule — outside the window it hides itself</td></tr>
+<tr><td><strong>Live</strong></td><td>Master on/off</td></tr>
+</table>
+
+<p>The slider auto-advances every 5 seconds, pauses on hover, supports swipe, and</p>
+<p>respects <code>prefers-reduced-motion</code>.</p>
+
+<h2>Categories</h2>
+
+<p><img src="img/categories.jpg" alt="Categories" loading="lazy"></p>
+
+<p>Categories drive the nav, the homepage rail and the shop filters.</p>
+
+<table>
+<tr><th>Field</th><th>Notes</th></tr>
+<tr><td><strong>Name / slug</strong></td><td>Slug becomes <code>/c/your-slug</code></td></tr>
+<tr><td><strong>Icon</strong></td><td>An <a href="https://icon-sets.iconify.design/solar/">Iconify</a> name like <code>solar:smartphone-bold</code></td></tr>
+<tr><td><strong>Commission rate</strong></td><td>Overrides the site default for products in this category</td></tr>
+<tr><td><strong>Sort order</strong></td><td>Position in the nav</td></tr>
+<tr><td><strong>Description</strong></td><td>Shown on the category page, used as its meta description</td></tr>
+</table>
+
+<h2>Brands</h2>
+
+<p><img src="img/brands.jpg" alt="Brands" loading="lazy"></p>
+
+<p>Name, slug, logo and website. Brands appear as a filter facet, on the product</p>
+<p>card, in the homepage brand rail, and in the product's structured data.</p>
+
+<h2>Media library</h2>
+
+<p><img src="img/media.jpg" alt="Media library" loading="lazy"></p>
+
+<p>Everything ever uploaded. Search by filename, filter by folder, and **Copy</p>
+<p>URL** gives you the full absolute URL (not a relative path), so it works when</p>
+<p>pasted anywhere.</p>
+
+<h2>Menus</h2>
+
+<p><img src="img/menus.jpg" alt="Menus" loading="lazy"></p>
+
+<p>Build the header and footer menus. Drag to reorder, nest one level for</p>
+<p>dropdowns. Items can point at a category, a page, a product or a custom URL.</p>
+
+<h2>Pages and blog</h2>
+
+<p><img src="img/posts.jpg" alt="Posts" loading="lazy"></p>
+
+<p><strong>Pages</strong> are static content — About, Privacy, Returns Policy. <strong>Posts</strong> are</p>
+<p>the blog / buying guides.</p>
+
+<p>Both use the same editor as products, including the Visual/HTML toggle and the</p>
+<p>AI writer, and both get their SEO generated automatically.</p>
+
+<p>Blog cards on the storefront are deliberately styled differently from product</p>
+<p>cards — wide 16:9 image, reading time, "Read guide" link — so the homepage does</p>
+<p>not read as one endless grid.</p>
+
+<h2>Widgets and shortcodes</h2>
+
+<p><strong>Widgets</strong> fill the sidebar and footer blocks. <strong>Shortcodes</strong> let you define a</p>
+<p>snippet once (say a shipping table) and drop <code>[my-snippet]</code> into any page or</p>
+<p>product description.</p>
+
+<hr>
+
+</section><section id="07-coupons-shipping">
+<h1>7 — Coupons & shipping</h1>
+
+<h2>Coupons</h2>
+
+<p><img src="img/coupons.jpg" alt="Coupons" loading="lazy"></p>
+
+<table>
+<tr><th>Field</th><th>Notes</th></tr>
+<tr><td><strong>Code</strong></td><td>What the buyer types. Matched case-insensitively</td></tr>
+<tr><td><strong>Kind</strong></td><td><code>percent</code> or <code>fixed</code></td></tr>
+<tr><td><strong>Value</strong></td><td><code>10</code> = 10% off, or ₹10 off, depending on kind</td></tr>
+<tr><td><strong>Min spend</strong></td><td>Cart subtotal must reach this</td></tr>
+<tr><td><strong>Vendor</strong></td><td>Leave blank for site-wide, or tie it to one seller</td></tr>
+<tr><td><strong>Usage limit</strong></td><td><code>0</code> = unlimited</td></tr>
+<tr><td><strong>Expires</strong></td><td>Last valid day</td></tr>
+<tr><td><strong>Active</strong></td><td>Master on/off</td></tr>
+</table>
+
+<p>Buyers apply codes in the cart. The totals update over AJAX without a reload,</p>
+<p>and the discount is recalculated <strong>server-side</strong> at checkout — a tampered</p>
+<p>client cannot change the price.</p>
+
+<p>A vendor-specific coupon only discounts that seller's items in a mixed cart.</p>
+
+<h2>Shipping</h2>
+
+<p><img src="img/shipping.jpg" alt="Shipping" loading="lazy"></p>
+
+<p>Shipping is <strong>zone + rate</strong>.</p>
+
+<p><strong>Zones</strong> group pincodes or states — e.g. *Metro*, *Rest of India*,</p>
+<p>*North-East*.</p>
+
+<p><strong>Rates</strong> within a zone can be:</p>
+
+<table>
+<tr><th>Type</th><th>Behaviour</th></tr>
+<tr><td>Flat</td><td>One price per package</td></tr>
+<tr><td>Weight-based</td><td>Price per kg, using variant weights</td></tr>
+<tr><td>Free above</td><td>Free once the package subtotal passes a threshold</td></tr>
+</table>
+
+<p>Rates apply <strong>per package</strong>, so each seller's shipment is costed separately —</p>
+<p>which is what the buyer sees in the cart.</p>
+
+<p><strong>Handling days</strong> on a product feed into the delivery estimate. The product</p>
+<p>page's *Check delivery* box combines the buyer's pincode, the zone, and the</p>
+<p>handling time to produce the date range.</p>
+
+<h3>A product that always ships free</h3>
+
+<p>Tick <strong>Free shipping</strong> in the product editor. It overrides the zone rate for</p>
+<p>that item.</p>
+
+<hr>
+
+</section><section id="08-settings">
+<h1>8 — Settings</h1>
+
+<p>Seven tabs. Each saves independently.</p>
+
+<h2>Site identity</h2>
+
+<p><img src="img/settings-identity.jpg" alt="Settings — site identity" loading="lazy"></p>
+
+<p><strong>1 — Logo.</strong> Replaces the icon + wordmark in the header, footer and admin</p>
+<p>sidebar. Constrained by height (34px header, 30px footer), so any aspect ratio</p>
+<p>fits. In dark mode it is auto-inverted so a dark logo does not vanish.</p>
+
+<p><strong>2 — Favicon.</strong> The browser tab icon. PNG, SVG and ICO all work — the MIME</p>
+<p>type is detected from the extension.</p>
+
+<p>Also here: site name, tagline, default social share image, and your social</p>
+<p>profile links. A social link left blank is <strong>not rendered</strong> — no dead <code>#</code></p>
+<p>links in the footer.</p>
+
+<h2>Commerce</h2>
+
+<p><img src="img/settings-commerce.jpg" alt="Settings — commerce" loading="lazy"></p>
+
+<table>
+<tr><th>Setting</th><th>Notes</th></tr>
+<tr><td><strong>Currency</strong></td><td>Symbol and code used everywhere</td></tr>
+<tr><td><strong>Default commission %</strong></td><td>Your cut. Categories and vendors can override it</td></tr>
+<tr><td><strong>Minimum payout</strong></td><td>Sellers below this are not listed on the payouts page</td></tr>
+<tr><td><strong>Payout cycle</strong></td><td>Weekly / fortnightly / monthly — guidance only</td></tr>
+<tr><td><strong>Earnings hold (days)</strong></td><td>Days after delivery before funds become available</td></tr>
+<tr><td><strong>Default role</strong></td><td>What new signups become</td></tr>
+<tr><td><strong>Auto-approve reviews</strong></td><td>Skip moderation for customer reviews</td></tr>
+<tr><td><strong>Demo logins</strong></td><td><strong>Turn this off before going live</strong></td></tr>
+</table>
+
+<h2>Payments</h2>
+
+<p><img src="img/settings-payments.jpg" alt="Settings — payments" loading="lazy"></p>
+
+<p><strong>Razorpay</strong> — key ID and secret. Signatures are verified server-side with</p>
+<p><code>hash_equals</code>.</p>
+
+<p><strong>PayPal</strong> — client ID and secret, plus a <strong>Live mode</strong> tick (leave unticked</p>
+<p>for sandbox). Captures are confirmed with a server-side Orders API call.</p>
+
+<p><strong>COD</strong> — on/off. COD earnings are credited to the seller only on delivery.</p>
+
+<blockquote>A browser redirect back from a gateway is never trusted on its own. Payment</blockquote>
+<blockquote>is confirmed server-to-server before an order is marked paid.</blockquote>
+
+<h2>Email (SMTP)</h2>
+
+<p><img src="img/settings-email.jpg" alt="Settings — email" loading="lazy"></p>
+
+<p>Host, port, username, password, encryption (STARTTLS / SSL / none), and the</p>
+<p>from name and address. The SMTP client is dependency-free — no PHPMailer.</p>
+
+<p>Emails sent: order confirmation, shipment with tracking, delivery, refund,</p>
+<p>password reset, vendor application result, payout recorded.</p>
+
+<p>Use <strong>Send test email</strong> after saving. If it fails, check the port (587 for</p>
+<p>STARTTLS, 465 for SSL) and whether your host blocks outbound SMTP.</p>
+
+<h2>AI writer</h2>
+
+<p>Paste a Groq API key to enable the <strong>AI writer</strong> button in the editors. It</p>
+<p>drafts product descriptions and blog posts from a short prompt. Leave the key</p>
+<p>blank and the button simply does not appear — nothing else changes.</p>
+
+<h2>Custom code</h2>
+
+<p>Inject <code><head></code> code (analytics, verification tags) and end-of-body code. Added</p>
+<p>verbatim to every storefront page. Admin pages are unaffected.</p>
+
+<h2>API tokens</h2>
+
+<p><img src="img/api-tokens.jpg" alt="API tokens" loading="lazy"></p>
+
+<p>Optional REST API. Create a token (<code>vlt_</code> + 40 hex, shown once), give it</p>
+<p><code>read</code> or <code>read+write</code> scope, and optionally lock it to a single vendor.</p>
+
+<p>Only the SHA-256 hash is stored, so a lost token cannot be recovered — revoke</p>
+<p>and reissue. There is a per-minute rate limit; exceeding it returns <strong>429</strong>.</p>
+<p>Docs generate themselves at <code>/api-docs.php</code>.</p>
+
+<h2>Backup</h2>
+
+<p>Covered in <a href="#11-backup">Backup & restore</a>.</p>
+
+<hr>
+
+</section><section id="09-vendor-panel">
+<h1>9 — Vendor panel</h1>
+
+<p>What your sellers see at <code>/vendor/</code>. Everything is scoped to their own store —</p>
+<p>enforced server-side, on every page and every AJAX call.</p>
+
+<h2>Dashboard</h2>
+
+<p><img src="img/vendor-dashboard.jpg" alt="Vendor dashboard" loading="lazy"></p>
+
+<p>Their sales, orders awaiting action, current balance and recent activity. Same</p>
+<p>layout language as the admin, but only their own numbers.</p>
+
+<h2>Products</h2>
+
+<p><img src="img/vendor-products.jpg" alt="Vendor products" loading="lazy"></p>
+
+<p>Their catalogue only. They add and edit products with the <strong>same editor</strong> the</p>
+<p>admin uses — variants, SKUs, images, Visual/HTML toggle, the lot.</p>
+
+<p>If <strong>auto-approve</strong> is off for this vendor, a new product is saved as *Pending*</p>
+<p>and appears in your Moderation queue. If it is on, they publish directly.</p>
+
+<h2>Orders</h2>
+
+<p><img src="img/vendor-orders.jpg" alt="Vendor orders" loading="lazy"></p>
+
+<p>Only packages belonging to them. They update shipment status, carrier and</p>
+<p>tracking through the same form you use — and those updates land in the same</p>
+<p>append-only timeline the buyer sees.</p>
+
+<p>A vendor requesting another vendor's package gets a <strong>403</strong>.</p>
+
+<h2>Earnings</h2>
+
+<p><img src="img/vendor-earnings.jpg" alt="Vendor earnings" loading="lazy"></p>
+
+<p>Pending, available and paid-to-date, plus every ledger line. Because this reads</p>
+<p>the same <code>vendor_ledger</code> table as your payouts page, your figures and theirs</p>
+<p>can never disagree.</p>
+
+<h2>Store profile</h2>
+
+<p><img src="img/vendor-profile.jpg" alt="Vendor profile" loading="lazy"></p>
+
+<p>Store name, bio, logo, banner, support contact, address and payout details.</p>
+<p>This is what buyers see on the storefront at <code>/store/their-slug</code>.</p>
+
+<h2>Also available to vendors</h2>
+
+<ul>
+<li><strong>Reviews & Q&A</strong> — reply to reviews and answer product questions</li>
+<li><strong>Returns</strong> — handle RMA requests for their items</li>
+<li><strong>Coupons</strong> — create discount codes for their own products only</li>
+<li><strong>Analytics</strong> — views, add-to-carts and purchases for their catalogue</li>
+</ul>
+
+<hr>
+
+</section><section id="10-seo">
+<h1>10 — SEO</h1>
+
+<h2>There are no SEO fields</h2>
+
+<p>You will not find a "meta title" or "meta description" box anywhere. Everything</p>
+<p>is derived from the content you already wrote, in <code>includes/seo.php</code>.</p>
+
+<table>
+<tr><th>Tag</th><th>Comes from</th></tr>
+<tr><td><code><title></code></td><td>Product/post title + site name</td></tr>
+<tr><td><code>meta description</code></td><td>Short description → body → auto-generated from the facts</td></tr>
+<tr><td><code>canonical</code></td><td>The clean URL, with tracking params stripped</td></tr>
+<tr><td>Open Graph + Twitter</td><td>Title, description, featured image (absolute URL)</td></tr>
+<tr><td>JSON-LD</td><td>Built from the record — see below</td></tr>
+</table>
+
+<p>Write a good title and short description and the rest follows.</p>
+
+<p><img src="img/front-home.jpg" alt="Storefront homepage" loading="lazy"></p>
+
+<p><img src="img/front-shop.jpg" alt="Shop listing" loading="lazy"></p>
+
+<h2>Structured data</h2>
+
+<table>
+<tr><th>Page</th><th>Schema emitted</th></tr>
+<tr><td>Product</td><td><code>Product</code> with price, stock, brand, rating, seller, return policy</td></tr>
+<tr><td>Multi-variant product</td><td><code>AggregateOffer</code> with low/high price</td></tr>
+<tr><td>Blog post</td><td><code>Article</code> with author and dates</td></tr>
+<tr><td>Store</td><td><code>Store</code> with address</td></tr>
+<tr><td>Every page</td><td><code>Organization</code> + <code>BreadcrumbList</code></td></tr>
+</table>
+
+<p>Test any page with <a href="https://search.google.com/test/rich-results">Google's Rich Results Test</a>.</p>
+
+<h2>URLs</h2>
+
+<p>Clean paths, not query strings:</p>
+
+<table>
+<tr><th>Page</th><th>URL</th></tr>
+<tr><td>Product</td><td><code>/product/apple-iphone-15-pro</code></td></tr>
+<tr><td>Blog post</td><td><code>/blog/best-smartwatches-2026</code></td></tr>
+<tr><td>Store</td><td><code>/store/novatech-store</code></td></tr>
+<tr><td>Category</td><td><code>/c/smartphones</code></td></tr>
+<tr><td>Brand</td><td><code>/brand/apple</code></td></tr>
+</table>
+
+<p>Old <code>?slug=</code> URLs <strong>301 redirect</strong> to the clean version, so a page is never</p>
+<p>indexable at two addresses.</p>
+
+<blockquote>Changing a slug after publishing changes the URL and the old one 404s. Set</blockquote>
+<blockquote>the slug before you publish.</blockquote>
+
+<h2>Filtered pages</h2>
+
+<p>Shop pages with a filter applied, and page 2 onwards, are automatically</p>
+<p><code>noindex,follow</code>. Facet combinations would otherwise flood the index with</p>
+<p>near-duplicate pages. Links are still crawled, so products stay discoverable.</p>
+
+<h2>Sitemap and robots</h2>
+
+<ul>
+<li><code>/sitemap.xml</code> — generated live from published content, clean URLs only</li>
+<li><code>/robots.txt</code> — generated, points at the sitemap</li>
+</ul>
+
+<p>Submit <code>https://yourdomain.com/sitemap.xml</code> in Search Console.</p>
+
+<h2>Accessibility</h2>
+
+<p>Every page scores <strong>zero WCAG 2 A/AA violations</strong> under axe-core, on desktop</p>
+<p>and mobile. That matters for SEO too — labelled controls and sufficient</p>
+<p>contrast are ranking-adjacent signals, and Lighthouse reports them.</p>
+
+<hr>
+
+</section><section id="11-backup">
+<h1>11 — Backup & restore</h1>
+
+<p><img src="img/settings-backup.jpg" alt="Settings — backup" loading="lazy"></p>
+
+<p><strong>Settings → Backup</strong></p>
+
+<h2>Taking a backup</h2>
+
+<p><strong>Download backup</strong> gives you a <code>.zip</code> containing the database — tick the</p>
+<p>option to include <code>uploads/</code> as well.</p>
+
+<p>If your host lacks the <code>zip</code> extension you get the raw <code>.sqlite</code> file instead.</p>
+<p>That is equally valid; it just is not compressed.</p>
+
+<p><strong>Back up before:</strong> upgrading, bulk-importing, editing anything in <code>db/</code>, or</p>
+<p>any change you are unsure about.</p>
+
+<h2>Restoring</h2>
+
+<p>1. Choose your backup file (<code>.zip</code> or <code>.sqlite</code>).</p>
+<p>2. Type <strong><code>RESTORE</code></strong> in the confirm box.</p>
+<p>3. Click <strong>Restore database</strong>.</p>
+
+<p>Two safety nets:</p>
+
+<p>1. <strong>The current database is snapshotted first</strong>, alongside the live file.</p>
+<p>2. <strong>The upload is validated before anything is overwritten.</strong> It is staged,</p>
+<p>   checked that it really is SQLite and contains the core tables, and only then</p>
+<p>   swapped in. A bad file is rejected and your live site is untouched.</p>
+
+<blockquote>Restoring replaces <strong>all</strong> data — products, orders, vendors, settings. It</blockquote>
+<blockquote>cannot be undone except by restoring another backup.</blockquote>
+
+<h2>What is protected</h2>
+
+<p><code>db/</code> is blocked at the web server by <code>.htaccess</code>, plus a rule denying</p>
+<p><code>.sqlite</code>, <code>.sqlite-wal</code>, <code>.sqlite-shm</code>, <code>.backup</code> and <code>.sql</code> files anywhere.</p>
+<p>Requesting <code>/db/voltra.sqlite</code> returns <strong>403</strong>.</p>
+
+<p>PHP execution is also disabled inside <code>uploads/</code>, so an uploaded <code>.php</code> file</p>
+<p>cannot be run.</p>
+
+<h2>Manual backup</h2>
+
+<p>The database is a single file. Over SSH:</p>
+
+<pre><code>
+cp db/voltra.sqlite ~/backups/voltra-$(date +%F).sqlite
+tar czf ~/backups/uploads-$(date +%F).tar.gz uploads/
+</code></pre>
+
+<p>A nightly cron job doing exactly that is a perfectly good backup strategy.</p>
+
+<hr>
+
+</section><section id="12-troubleshooting">
+<h1>12 — Troubleshooting</h1>
+
+<h2>Pretty URLs 404 (<code>/product/xyz</code> not found)</h2>
+
+<p><code>mod_rewrite</code> is off, or <code>.htaccess</code> is being ignored.</p>
+
+<ul>
+<li>Confirm <code>.htaccess</code> uploaded (it starts with a dot — many FTP clients hide it)</li>
+<li>Ask your host to enable <code>mod_rewrite</code></li>
+<li>On Apache, <code>AllowOverride All</code> must be set for your directory</li>
+<li>Testing locally? Use <code>php -S 0.0.0.0:8080 router.php</code> — plain <code>php -S</code> has no</li>
+<p>  rewrite support</p>
+</ul>
+
+<p>Query-string URLs (<code>/product.php?slug=xyz</code>) keep working either way.</p>
+
+<h2>Blank white page</h2>
+
+<p>PHP is erroring with display off. Check your host's error log. Most common</p>
+<p>causes:</p>
+
+<ul>
+<li>PHP older than 8.1</li>
+<li><code>pdo_sqlite</code> not enabled</li>
+<li><code>db/</code> not writable</li>
+</ul>
+
+<h2>"Unable to open database file"</h2>
+
+<p><code>db/</code> is not writable. Set it to <code>755</code> (or <code>775</code> on stricter hosts) and make</p>
+<p>sure <code>db/voltra.sqlite</code> itself is writable.</p>
+
+<h2>Images upload but do not appear</h2>
+
+<p><code>uploads/</code> is not writable, or the path is wrong. Check the file exists on</p>
+<p>disk, then open its URL directly. If you get 403, your host may be blocking</p>
+<p>the folder.</p>
+
+<h2>Logo or favicon not showing</h2>
+
+<p>Set both in <strong>Settings → Site identity</strong>, then hard-refresh (<code>Ctrl+F5</code>).</p>
+<p>Browsers cache favicons aggressively — try a private window to confirm.</p>
+
+<h2>Emails not sending</h2>
+
+<ul>
+<li>Check port: <strong>587</strong> for STARTTLS, <strong>465</strong> for SSL</li>
+<li>Many shared hosts block outbound SMTP — use their relay, or a service like</li>
+<p>  Brevo or Mailgun</p>
+<li>Gmail needs an <strong>app password</strong>, not your account password</li>
+<li>Use <strong>Send test email</strong> to see the actual error</li>
+</ul>
+
+<h2>Payment succeeds but the order stays unpaid</h2>
+
+<p>The gateway callback is not reaching you.</p>
+
+<ul>
+<li>Razorpay: check the webhook URL and that the secret matches exactly</li>
+<li>PayPal: confirm live/sandbox matches your keys</li>
+<li>The callback must be publicly reachable — it will not work on localhost</li>
+</ul>
+
+<h2>Vendor sees "not your resource"</h2>
+
+<p>Working as intended. A vendor can only touch their own products, orders and</p>
+<p>packages. If they genuinely need access, the record is assigned to another</p>
+<p>seller — check the product's <strong>Seller</strong> field.</p>
+
+<h2>Save shows a blank page</h2>
+
+<p>Fixed in the current build — panel screens buffer their output so a</p>
+<p>redirect-after-save always fires. If you see it, you are on an older copy.</p>
+
+<h2>Countdown timer not appearing</h2>
+
+<p>The timer only renders while the deal is <strong>in the future</strong>. Check <strong>Deal ends</strong></p>
+<p>in the product editor is set and has not passed. It also needs the product to</p>
+<p>be discounted (MRP above price) to look right.</p>
+
+<h2>Everything looks unstyled</h2>
+
+<p><code>assets/css/app.css</code> is not loading. Open its URL directly — a 404 means the</p>
+<p>upload was incomplete; a 403 means permissions.</p>
+
+<h2>Getting more detail</h2>
+
+<p>Temporarily add this to the top of <code>includes/config.php</code>:</p>
+
+<pre><code>
+ini_set(&#x27;display_errors&#x27;, &#x27;1&#x27;);
+error_reporting(E_ALL);
+</code></pre>
+
+<p><strong>Remove it once you are done.</strong> Never leave error display on in production —</p>
+<p>it leaks file paths and query structure.</p>
+
+<hr>
+
+</section></main><script>
+const links=[...document.querySelectorAll('nav a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+function sync(){
+  let i=secs.findIndex(s=>s&&s.getBoundingClientRect().top>90);
+  if(i===-1)i=secs.length; i=Math.max(0,i-1);
+  links.forEach((a,n)=>a.classList.toggle('on',n===i));
+}
+document.addEventListener('scroll',sync,{passive:true}); sync();
+</script>
