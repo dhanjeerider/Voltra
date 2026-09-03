@@ -2,6 +2,10 @@
 if you want to see demo YouTube video for features and custmization click here 👇
 https://youtu.be/hL_hWPMbTFY?si=ivlcD6GHjFxIYybP
 chek the live demo for better understanding https://voltra.dktheme.com
+
+Buy this completed multivendor php script  https://wbthemes.com/?s=Voltra&post_type=product
+
+
 Everything you need to run the marketplace day to day. Screenshots are taken
 from the actual running app, so what you see here is what you get.
 
