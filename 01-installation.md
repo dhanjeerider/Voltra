@@ -7,7 +7,7 @@
 | Need | Detail |
 |---|---|
 | PHP | 8.1 or newer |
-| Extensions | `pdo_sqlite` (required), `curl` (payments/AI), `zip` (zip backups), `gd` (optional) |
+| Extensions | `pdo_sqlite` (required) default enabled mostly, `curl` (payments/AI), `zip` (zip backups), `gd` (optional) |
 | Server | Apache/LiteSpeed with `mod_rewrite`, or PHP's built-in server for testing |
 | Database | None to install — SQLite lives in `db/voltra.sqlite` |
 
@@ -15,11 +15,13 @@ No Composer. No npm. No build step. There is nothing to compile.
 
 ## Install
 
-1. **Unzip** the archive and upload the contents to your web root
+1. upload the provided zip on your file manager in public HTML folder **Unzip** the archive and upload the contents to your web root
    (`public_html`, `htdocs`, or similar).
-2. Make sure `uploads/` and `db/` are **writable** by PHP (usually `755`, some
-   hosts need `775`).
-3. Open your domain in a browser.
+2. Make sure `uploads/` and `db/` permission are **writable** by PHP (usually `755`, some
+   hosts need `775`). and also make sure if you open public html folder you will see index.php in that folder 📁 
+3. Open your domain in a browser go to login login with default admin credentials and change password from security settings after login
+4. if you want to start from scratch you can reset the site from setting> backup and reset when you don this all data img post page product will be deleted then you need to create new one by one
+5. I recommend to delete post page and products from bulc select option and start working on that 
 
 That's it. A seeded demo database ships inside the zip, so the site works
 immediately — you do **not** need to run an installer.
