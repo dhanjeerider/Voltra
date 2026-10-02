@@ -5,6 +5,8 @@ chek the live demo for better understanding https://voltra.dktheme.com
 
 Buy this completed multivendor php script  https://wbthemes.com/?s=Voltra&post_type=product
 
+## More WordPress & PHP resources
+For additional WordPress themes, Blogger templates, PHP scripts, and website resources, see the [WBThemes shop](https://wbthemes.com/shop/).
 
 Everything you need to run the marketplace day to day. Screenshots are taken
 from the actual running app, so what you see here is what you get.
